@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit users</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <div class="p-5 sm:p-10 flex flex-col gap-5 text-white w-full h-screen bg-zinc-800">
+    <div>
+      <a href="/read" class="text-blue-500 text-lg sm:text-xl">Show Users</a>
+    </div>
+    <div>
+      <h1 class="text-3xl sm:text-5xl">Update your profile</h1>
+    </div>
+    <form class="flex flex-col gap-5 sm:gap-3" action="/update/<%= editUser._id %>" method="POST">
+      <input type="text" name="name" class="border-2 border-zinc-500 outline-none px-5 py-3 sm:py-2" placeholder="Enter Name" value="<%= editUser.name %>">
+      <input type="email" name="email" class="border-2 border-zinc-500 outline-none px-5 py-3 sm:py-2" placeholder="Enter Email" value="<%= editUser.email %>">
+      <input type="text" name="image" class="border-2 border-zinc-500 outline-none px-5 py-3 sm:py-2" placeholder="Enter Image URL" value="<%= editUser.image %>">
+      <input type="submit" class="border-2 border-zinc-500 outline-none px-5 py-3 sm:py-2 rounded-sm bg-blue-700" value="Update now">
+    </form>
+  </div>
+</body>
+</html>

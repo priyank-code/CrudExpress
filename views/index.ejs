@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My project</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-800">
+  <div class="p-5 sm:p-10 flex flex-col gap-5 text-white w-full text-white">
+    <div><a href="/read" class="text-blue-500 text-lg sm:text-xl">Show Users</a></div>
+    <div><h1 class="text-3xl sm:text-5xl">Create User</h1></div>
+    <form class="flex flex-col sm:flex-row gap-5 sm:gap-3">
+      <input type="text" name="name" class="border-2 border-zinc-500 outline-none px-5 py-2 sm:py-1" placeholder="Enter Name">
+      <input type="email" name="email" class="border-2 border-zinc-500 outline-none px-5 py-2 sm:py-1" placeholder="Enter Email">
+      <input type="text" name="image" class="border-2 border-zinc-500 outline-none px-5 py-2 sm:py-1" placeholder="Enter Image URL">
+      <input type="submit" class="border-2 border-zinc-500 outline-none px-5 py-2 sm:py-1 rounded-sm bg-blue-700" value="Add New User">
+    </form>
+  </div>
+</body>
+</html>

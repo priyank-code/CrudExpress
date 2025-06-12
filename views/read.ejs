@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All users</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div
+      class="p-5 sm:p-10 flex flex-col gap-5 text-white w-full h-screen bg-zinc-800 text-white"
+    >
+      <div><a href="/" class="text-blue-500 text-lg sm:text-xl">Back to home</a></div>
+      <div><h1 class="text-3xl sm:text-5xl">All Users</h1></div>
+      
+      <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-5">
+        <% if (users.length > 0) { %> <% users.forEach((user) => { %>
+        <div class="w-full h-auto border-2 border-zinc-400 rounded-sm p-5">
+          <img
+            src="<%= user.image %>"
+            alt="image"
+            class="h-40 w-full rounded-sm object-cover"
+          />
+          <div class="flex flex-col gap-2 mt-3">
+            <p class="text-sm sm:text-base font-semibold"><%= user.name %></p>
+            <p class="text-xs sm:text-sm text-zinc-300"><%= user.email %></p>
+          </div>
+          <div class="mt-8 flex justify-between px-5 text-sm sm:text-base">
+            <a
+              href="/edit/<%= user._id %>"
+              class="text-zinc-200 hover:text-zinc-400"
+              >Edit user</a
+            >
+            <a href="/delete/<%= user._id %>" class="text-red-500 hover:text-red-300"
+              >Delete user</a
+            >
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <p>User not found</p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
