@@ -44,4 +44,4 @@ app.post("/update/:id", async(req, res) => {
   res.redirect("/read");
 })
 
-app.listen(3000);
+app.listen(3000, console.log("Server started successfully..."));
